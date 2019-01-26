@@ -1,12 +1,12 @@
 # =============== #
 # Unity generated #
 # =============== #
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
-[Ll]ogs/
+Javoc/[Ll]ibrary/
+Javoc/[Tt]emp/
+Javoc/[Oo]bj/
+Javoc/[Bb]uild/
+Javoc/[Bb]uilds/
+Javoc/[Ll]ogs/
 
 # Never ignore Asset meta data
 ![Aa]ssets/**/*.meta
