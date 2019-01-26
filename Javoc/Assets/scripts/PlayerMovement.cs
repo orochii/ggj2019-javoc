@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField]
 	float velocidadMovimiento = 2.0f;
 
+    [SerializeField]
+    Animator animador;
+
 	// Esta variable es usada para tener una referencia al gráfico, para rotarlo de acuerdo a la dirección de movimiento.
 	[SerializeField]
 	Transform grafico;
@@ -28,9 +31,9 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-
-		Movimiento();
-	}
+        Movimiento();
+        Animacion();
+    }
 
 
 	void Movimiento()
@@ -55,6 +58,13 @@ public class PlayerMovement : MonoBehaviour
 			Quaternion direccion = Quaternion.LookRotation(movimiento);
 			grafico.rotation = direccion; // Y aquí se asigna la dirección directamente al gráfico.
 		}
-		// POR HACER: Animar al personaje. Las animaciones de correr y de estar parado están hechas. :D
 	}
+
+    // Animar al personaje. Correr y detenerse.
+    void Animacion() {
+        if (animador != null) {
+            float velocidadActual = controladorPersonaje.velocity.magnitude;
+            animador.SetFloat("speed", velocidadActual);
+        }
+    }
 }
